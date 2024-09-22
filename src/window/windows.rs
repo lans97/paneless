@@ -47,7 +47,7 @@ impl WindowsWindow {
         let mut wc = WNDCLASSW::default();
 
         // Fill minimum requirements
-        //wc.style = CS_HREDRAW | CS_VREDRAW;
+        wc.style = CS_HREDRAW | CS_VREDRAW;
         wc.lpfnWndProc = Some(Self::window_procedure);
         wc.hInstance = h_instance.into();
         wc.hCursor = load_default_cursor(IDC_ARROW)?;
